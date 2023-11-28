@@ -1,0 +1,47 @@
+@import "variables";
+
+header {
+  width: 100%;
+  height: $header-height;
+
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+
+  box-shadow: 0 8px 8px -4px rgb(40, 40, 40);
+
+  .app-title {
+    font-weight: bold;
+  }
+
+  nav {
+    ul {
+      display: block;
+      text-transform: uppercase;
+      list-style: none;
+      padding: 0;
+      text-align: center;
+      margin: 0;
+    }
+
+    li {
+      display: inline;
+      margin-right: 2rem;
+      padding: 0.5rem 1rem;
+      transition: color 0.5s ease;
+
+      &:hover {
+        background: lighten($color: $background-color, $amount: 10);
+        border-radius: 10px;
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: $font-color;
+    }
+
+    a.active {
+      font-weight: bold;
+    }
+  }
+}

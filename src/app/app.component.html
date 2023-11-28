@@ -1,6 +1,25 @@
-<!-- <router-outlet></router-outlet> -->
-<h1>App {{title}} is up and running!</h1>
+<header class="flex-row flex-space-between flex-items-center">
 
-<app-homepage></app-homepage>
+    <div class="app-title flex-hide-xs">
+        {{ title | uppercase }}
+    </div>
 
-<app-explorer></app-explorer>
+    <nav class="flex-row flex-center flex-items-center">
+        <ul class="flex-row flex-center flex-items-center flex-column-xs">
+            <li>
+                <a routerLink="/dashboard" routerLinkActive="active">Home</a>
+            </li>
+
+            <li>
+                <a routerLink="/sales" routerLinkActive="active">Sales</a>
+            </li>
+        </ul>
+    </nav>
+
+</header>
+
+<main>
+
+    <router-outlet></router-outlet>
+
+</main>

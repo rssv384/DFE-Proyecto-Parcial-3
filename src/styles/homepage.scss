@@ -1,0 +1,36 @@
+.home {
+  background: url("../assets/img/home-banner.png") no-repeat center center fixed;
+  background-size: cover;
+
+  position: relative;
+}
+
+.home-banner {
+  gap: 1rem;
+  padding: 1rem;
+
+  background-color: hsl(0, 0%, 0%);
+  opacity: 0.9;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.dashboard-container {
+  margin-top: 2rem;
+  padding: 0 1.5rem 0 1.5rem;
+  color: $secondary-color;
+
+  img {
+    margin-bottom: 1rem;
+  }
+
+  .dashboard-highlight {
+    font-size: 2.5rem;
+    color: $primary-color;
+    margin-top: 1rem;
+  }
+}
