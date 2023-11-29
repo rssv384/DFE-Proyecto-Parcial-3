@@ -1,7 +1,7 @@
 export enum MovieStatus {
   OnCinemas = 'On Cinemas',
   ComingSoon = 'Coming Soon',
-  FinishedScreening = 'Finished Screening',
+  NotScreening = 'Not Screening',
 }
 
 export interface Sale {

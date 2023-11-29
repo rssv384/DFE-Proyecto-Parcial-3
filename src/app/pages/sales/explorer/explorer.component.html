@@ -1,7 +1,7 @@
-<h2>explorer works!</h2>
+<h1 class="text-center">Sales Report</h1>
 
 <app-filter></app-filter>
 
-<app-search-summary></app-search-summary>
+<app-search-summary [message]="message"></app-search-summary>
 
-<app-sales-view></app-sales-view>
+<app-sales-view [salesList]="salesList" [isLoading]="isLoading"></app-sales-view>

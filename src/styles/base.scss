@@ -56,3 +56,18 @@ section {
 section:not(.home) {
   height: fit-content;
 }
+
+hr {
+  border: 3px solid $primary-color;
+  width: 5rem;
+  margin: 1rem auto;
+}
+
+span.tag {
+  background-color: $secondary-color;
+  color: $background-color;
+  width: fit-content;
+  padding: 0.25rem 0.5rem;
+  border-radius: 1rem;
+  white-space: nowrap;
+}

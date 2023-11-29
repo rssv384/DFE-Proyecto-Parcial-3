@@ -1,1 +1,35 @@
-<h3>filter works!</h3>
+<hr>
+<section>
+    <div class="filter-section flex-column flex-center flex-items-center">
+        <h2>Filter Sales</h2>
+        <form class="filter-form flex-column">
+            <div class="filter-fields-container">
+                <div class="filter-field">
+                    <label for="title-filter">Movie Title:</label>
+                    <input type="text" id="title-filter" placeholder="Movie title">
+                </div>
+
+                <div class="filter-field">
+                    <label for="status-filter">Status:</label>
+                    <select id="status-filter">
+                        <option value="" selected>Any</option>
+                        <option value="OnCinemas">On Cinemas</option>
+                        <option value="ComingSoon">Coming Soon</option>
+                        <option value="NotScreening">Not Screening</option>
+                    </select>
+                </div>
+
+                <div class="filter-field">
+                    <label for="release-date-filter">Release Date:</label>
+                    <input type="date" id="release-date-filter">
+                </div>
+            </div>
+
+            <div class="buttons-container">
+                <button type="submit" class="btn-submit">Search</button>
+                <button type="reset" class="btn-reset">Reset</button>
+            </div>
+        </form>
+
+    </div>
+</section>

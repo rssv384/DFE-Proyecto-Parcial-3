@@ -1,1 +1,33 @@
-<h3>sales-view works!</h3>
+<section class="flex-column flex-items-center">
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th>Movie</th>
+                    <th>Status</th>
+                    <th>Release Date</th>
+                    <th>Tickets Sold</th>
+                    <th>Total Sales</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let sale of salesList">
+                    <td class="text-center"><strong>{{ sale.id }}</strong> </td>
+                    <td> <img [src]="posterPathRoot + sale.poster_path" [alt]="sale.movie_title">
+                    </td>
+                    <td>{{ sale.movie_title }}</td>
+                    <td> <span class="tag">{{ sale.status }}</span> </td>
+                    <td class="text-center">{{ sale.release_date }}</td>
+                    <td class="text-right">{{ sale.tickets_sold }}</td>
+                    <td class="text-right">{{ sale.total_sales | currency }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="message" *ngIf="salesList.length === 0">
+        <p>{{ isLoading ? 'Loading...' : 'No sales records were found.'}}</p>
+    </div>
+</section>
