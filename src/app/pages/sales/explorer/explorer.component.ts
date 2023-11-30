@@ -1,5 +1,7 @@
+import { HttpParams } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Sale } from 'src/app/models/sale';
+import { SearchParams } from 'src/app/models/search-params';
 import { SalesService } from 'src/app/services/sales.service';
 
 @Component({
@@ -8,9 +10,9 @@ import { SalesService } from 'src/app/services/sales.service';
   styleUrls: ['./explorer.component.scss'],
 })
 export class ExplorerComponent implements OnInit {
-  isLoading = false;
-
+  isLoading = false; // Is loading sales records?
   salesList: Sale[] = [];
+  filterParams: SearchParams = {};
 
   constructor(private data: SalesService) {}
 
@@ -35,5 +37,31 @@ export class ExplorerComponent implements OnInit {
       this.isLoading = false;
       this.salesList = x;
     });
+  }
+
+  filterSalesList(filterParams: SearchParams) {
+    let queryParams = new HttpParams();
+
+    if (filterParams.movie_title) {
+      queryParams = queryParams.append('movie_title', filterParams.movie_title);
+    }
+
+    if (filterParams.status) {
+      queryParams = queryParams.append('status', filterParams.status);
+    }
+
+    if (filterParams.release_date) {
+      queryParams = queryParams.append(
+        'release_date',
+        filterParams.release_date
+      );
+    }
+
+    if (queryParams) {
+      this.data.getFilteredSalesList(queryParams).subscribe((x) => {
+        this.isLoading = false;
+        this.salesList = x;
+      });
+    }
   }
 }

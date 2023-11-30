@@ -2,16 +2,16 @@
 <section>
     <div class="filter-section flex-column flex-center flex-items-center">
         <h2>Filter Sales</h2>
-        <form class="filter-form flex-column">
+        <form class="filter-form flex-column" #filterForm>
             <div class="filter-fields-container">
                 <div class="filter-field">
                     <label for="title-filter">Movie Title:</label>
-                    <input type="text" id="title-filter" placeholder="Movie title">
+                    <input type="text" id="title-filter" placeholder="Movie title" #movieTitle>
                 </div>
 
                 <div class="filter-field">
                     <label for="status-filter">Status:</label>
-                    <select id="status-filter">
+                    <select id="status-filter" #status>
                         <option value="" selected>Any</option>
                         <option value="OnCinemas">On Cinemas</option>
                         <option value="ComingSoon">Coming Soon</option>
@@ -21,13 +21,14 @@
 
                 <div class="filter-field">
                     <label for="release-date-filter">Release Date:</label>
-                    <input type="date" id="release-date-filter">
+                    <input type="date" id="release-date-filter" #releaseDate>
                 </div>
             </div>
 
             <div class="buttons-container">
-                <button type="submit" class="btn-submit">Search</button>
-                <button type="reset" class="btn-reset">Reset</button>
+                <button type="button" class="btn-submit"
+                    (click)="processFilters(movieTitle.value,status.value,releaseDate.value); filterForm.reset()">Search</button>
+                <button type="button" class="btn-reset" (click)="filterForm.reset()">Reset</button>
             </div>
         </form>
 

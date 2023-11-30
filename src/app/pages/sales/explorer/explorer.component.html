@@ -1,6 +1,6 @@
 <h1 class="text-center">Sales Report</h1>
 
-<app-filter></app-filter>
+<app-filter (filterParamsEvent)="filterSalesList($event)"></app-filter>
 
 <app-search-summary [message]="message"></app-search-summary>
 

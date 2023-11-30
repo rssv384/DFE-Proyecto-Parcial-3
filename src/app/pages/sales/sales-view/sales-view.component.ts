@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Sale } from 'src/app/models/sale';
-import { SalesService } from 'src/app/services/sales.service';
 
 @Component({
   selector: 'app-sales-view',
